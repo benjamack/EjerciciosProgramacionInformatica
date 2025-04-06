@@ -69,8 +69,117 @@ def cuantas_figus(figus_total):
     figus_compradas=0
     while album_incompleto(album):
         figu=comprar_figu(figus_total)
-        album[figu]= album[figu]+1
-        figus_compradas+1
+        album[figu]=album[figu]+1
+        figus_compradas+=1
     return figus_compradas
 
+figus_necesarias = cuantas_figus(860)
+print(f"Se necesitaron {figus_necesarias} figuritas para completar el álbum.")
+
+        
+
+
+# %%
+## Ejercicio 5:
+## Ejecutá n_repeticiones = 1000 veces la función anterior utilizando figus_total = 6 y guardá en una lista los resultados obtenidos en 
+## cada repetición. Con los resultados obtenidos estimá cuántas figuritas hay que comprar, en promedio, para completar el álbum de seis figuritas.
+n_repeticiones=1000
+figus_total=6
+resultados=[]
+
+for _ in range(n_repeticiones):
+    resultado = cuantas_figus(figus_total)
+    resultados.append(resultado)
+print(resultados)
+
+# Calculamos el promedio
+promedio = sum(resultados) / n_repeticiones
+print(f"En promedio, se necesitan {promedio:.2f} figuritas para completar un álbum de {figus_total}.")
+
+
+
+# %%
+## Ejercicio 6:
+## Escribí una función llamada experimento_figus(n_repeticiones, figus_total) que simule el llenado de n_repeticiones álbums de figus_total figuritas y 
+## devuelva el número estimado de figuritas que hay que comprar, en promedio, para completar el álbum.
+## Para esto, una posibilidad es que la función experimento_figus() llame a la función cuantas_figus() tantas veces como lo indica el parámetro 
+## n_repeticiones y guarde los resultados parciales en una lista, a partir de la cual luego realice el promedio.
+## ¿Cuál es el resultado para 100 repeticiones en un álbum de 860 figuritas?
+def simulaciones(n_repeticiones,figus_total):
+    resultados=[]
+    for _ in range(n_repeticiones):
+        resultado=cuantas_figus(figus_total)
+        resultados.append(resultado)
+    promedio=sum(resultados)/n_repeticiones
+    return promedio
+
+resultados=simulaciones(n_repeticiones,figus_total)
+
+promedio=simulaciones(100,6)
+print(promedio)
+
+
+#%%
+## Ejercicios con paquetes
+## Ejercicio 7:
+## Simulá la generación de un paquete con cinco figuritas, sabiendo que el álbum es de 860. Tené en cuenta que, como en la vida real, puede haber 
+## figuritas repetidas en un paquete.
+figus_total=860
+def comprar_figus(figus_total):
+    figus = np.array([random.randint(0, figus_total - 1) for _ in range(5)])
+    return figus
+
+
+#%%
+## Ejercicio 8:
+## Implementá una función comprar_paquete(figus_total, figus_paquete) que, dado el tamaño del álbum (figus_total) y la cantidad de figuritas por 
+## paquete (figus_paquete), genere un paquete (lista) de figuritas al azar.
+def comprar_paquete(figus_total, figus_paquete):
+    paquete=[]
+    for _ in range(figus_paquete):
+        figu=comprar_figus(figus_total)
+        paquete.append(figu)
+    return paquete
+
+print(comprar_paquete(850, 5))
+
+
+
+#%%
+## Ejercicio 9:
+## Implementá una función cuantos_paquetes(figus_total, figus_paquete) que dado el tamaño del álbum y la cantidad de figus por paquete, genere un 
+## álbum nuevo, simule su llenado y devuelva cuántos paquetes se debieron comprar para completarlo.
+def cuantos_paquetes(figus_total, figus_paquete):
+    album=crear_album(figus_total)
+    paquetes_comprados=0
+    while album_incompleto(album):
+        paquete=comprar_paquete(figus_total, figus_paquete)
+        album[paquete]=album[paquete]+1
+        paquetes_comprados+=1
+    return paquetes_comprados
+
+paquetes_necesarios = cuantos_paquetes(860, 5)
+print(f"Se necesitaron {paquetes_necesarios} paquetes para completar el álbum.")
+
+
+
+#%%
+## Ejercicio 10:
+## Calculá n_repeticiones = 100 veces la función cuantos_paquetes, utilizando figus_total = 860, figus_paquete = 5. Guarda los resultados obtenidos 
+## en una lista y calculá su promedio. Si los recursos de la computadora lo permiten, hacelo con 1000 repeticiones.
+n_repeticiones=1000
+figus_total=860
+figus_paquete=5
+resultados=[]
+
+for _ in range(n_repeticiones):
+    resultado = cuantos_paquetes(figus_total,figus_paquete)
+    resultados.append(resultado)
+print(resultados)
+
+paquetes_necesarios = cuantos_paquetes(figus_total, figus_paquete)
+
+# Calculamos el promedio
+promedio = sum(resultados) / n_repeticiones
+print(f"En promedio, se necesitan {promedio:.2f} figuritas para completar un álbum de {figus_total}.")
 # %%
