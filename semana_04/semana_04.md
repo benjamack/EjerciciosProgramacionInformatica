@@ -4,7 +4,7 @@
 
 Este archivo resume los resultados obtenidos a partir del análisis del archivo `arbolado-en-espacios-verdes.csv`.
 
-### 🌳 Parques con más cantidad de árboles
+### Parques con más cantidad de árboles
 
 1. Parque Avellaneda – 3885 árboles
 2. Parque Chacabuco – 3521 árboles
@@ -12,7 +12,7 @@ Este archivo resume los resultados obtenidos a partir del análisis del archivo 
 4. Parque Rivadavia – 2640 árboles
 5. Parque Los Andes – 2144 árboles
 
-### 📏 Parques con árboles más altos en promedio
+### Parques con árboles más altos en promedio
 
 1. Parque Thays – 13.62 m
 2. Parque Lezama – 13.21 m
@@ -20,7 +20,7 @@ Este archivo resume los resultados obtenidos a partir del análisis del archivo 
 4. Parque Centenario – 13.02 m
 5. Parque Rivadavia – 12.89 m
 
-### 🌱 Parques con más variedad de especies
+### Parques con más variedad de especies
 
 1. Parque Avellaneda – 69 especies
 2. Parque Chacabuco – 63 especies
@@ -28,19 +28,6 @@ Este archivo resume los resultados obtenidos a partir del análisis del archivo 
 4. Parque Rivadavia – 56 especies
 5. Parque Lezama – 54 especies
 
-### 🔬 Especie más frecuente en toda la ciudad
+### Especie más frecuente en toda la ciudad
 
 - **Jacarandá** – 1132 ejemplares
-
-### 🌎 Relación entre especies exóticas y autóctonas
-
-- **1.84**  
-  (es decir, hay un 84% más de ejemplares de especies exóticas que nativas/autóctonas)
-
----
-
-## Notas adicionales
-
-- Todos los resultados fueron generados a partir del código en `semana_04.py`.
-- Se utilizó el paquete `csv` con `DictReader` para la lectura estructurada del dataset.
-- Las funciones fueron organizadas por consigna y son reutilizables para otros parques o parámetros.
