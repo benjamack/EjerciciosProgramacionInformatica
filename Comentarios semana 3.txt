@@ -1,0 +1,4 @@
+SEMANA 03
+
+Por un lado, comprar_figus y comprar_figu se confunden a la hora de comprar paquete, generando un problema de tipos cuando se espera una figurita y se obtiene una lista.
+Por otro, un arreglo de Numpy no es una lista. En crear_album eso puede resolverse retornando list(arregloNP)
