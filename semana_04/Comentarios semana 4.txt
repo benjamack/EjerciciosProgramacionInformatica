@@ -1,0 +1,1 @@
+Tu entrega está muy bien. Pasó todos nuestros test, el informe es correcto. Notamos que interpretaste que parques era literalmente los parques de la Ciudad, por lo que tu informe requirió una búsqueda más exhaustiva. ¿La hiciste debugueando o utilizando alguna otra herramienta de análisis?
